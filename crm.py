@@ -5,11 +5,15 @@ class User:
         self.phone_number = phone_number
         self.address = address
 
+    @property
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}"
+
     def __repr__(self):
         return f"User(first_name={self.first_name}, last_name={self.last_name}, phone_number={self.phone_number}, address={self.address})"
 
     def __str__(self):
-        return f"{self.first_name}, {self.last_name}, {self.phone_number}, {self.address})"
+        return f"{self.first_name}\n{self.last_name}\n{self.phone_number}\n{self.address})"
 
 
 if __name__ == "__main__":
@@ -19,4 +23,5 @@ if __name__ == "__main__":
     for _ in range(10):
         user = User(fake.first_name(), fake.last_name(), fake.phone_number(), fake.address())
         print(user.__str__())
+        print("Full name: " + " " + user.full_name)
         print("-" * 10)
