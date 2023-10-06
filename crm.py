@@ -5,13 +5,28 @@ class User:
         self.phone_number = phone_number
         self.address = address
 
+    """
+    Returns the full name of the person.
+
+    :return: (str) The full name of the person.
+    """
     @property
     def full_name(self):
         return f"{self.first_name} {self.last_name}"
 
+    """
+    Return a string representation of the User object.
+    """
     def __repr__(self):
-        return f"User(first_name={self.first_name}, last_name={self.last_name}, phone_number={self.phone_number}, address={self.address})"
+        return (f"User(first_name={self.first_name}, last_name={self.last_name}, phone_number={self.phone_number}, "
+                f"address={self.address})")
 
+    """
+    Returns a string representation of the object.
+
+    :return: A string containing the first name, last name, phone number, and address of the object.
+    :rtype: str
+    """
     def __str__(self):
         return f"{self.first_name}\n{self.last_name}\n{self.phone_number}\n{self.address})"
 
