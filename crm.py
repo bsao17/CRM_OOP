@@ -28,7 +28,7 @@ class User:
     :rtype: str
     """
     def __str__(self):
-        return f"{self.first_name}\n{self.last_name}\n{self.phone_number}\n{self.address})"
+        return f"{self.full_name}\n{self.phone_number}\n{self.address})"
 
 
 if __name__ == "__main__":
@@ -37,6 +37,6 @@ if __name__ == "__main__":
     fake = Faker(locale="fr_FR")
     for _ in range(10):
         user = User(fake.first_name(), fake.last_name(), fake.phone_number(), fake.address())
-        print(user.__str__())
-        print("Full name: " + " " + user.full_name)
+        print(str(user))
         print("-" * 10)
+
